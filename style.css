@@ -214,6 +214,11 @@ a:hover {
     padding: var(--spacing-md) var(--spacing-lg);
   }
 
+  .site-header::after {
+    left: var(--spacing-lg);
+    right: var(--spacing-lg);
+  }
+
   .hero {
     min-height: calc(100vh - 70px);
     padding: var(--spacing-2xl) var(--spacing-lg);
