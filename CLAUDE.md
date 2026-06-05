@@ -8,7 +8,14 @@ Single-page static site (`index.html`). No build step, no framework, no dependen
 
 ## Deployment
 
-GitHub Pages. Custom domain: `heartwork.in` (set via `CNAME`). Pushes to `main` deploy automatically.
+| Environment | Host          | Branch    | URL                  |
+|-------------|---------------|-----------|----------------------|
+| Production  | GitHub Pages  | `main`    | `heartwork.in`       |
+| Staging     | Netlify       | `staging` | `staging.heartwork.in` |
+
+Custom domain for production is `heartwork.in` (set via `CNAME`). Pushes to `main` deploy automatically to production; pushes to `staging` deploy automatically to Netlify.
+
+When making changes: work on a feature branch, merge to `staging` to preview on Netlify, then merge to `main` to ship to production.
 
 ## Brand
 
