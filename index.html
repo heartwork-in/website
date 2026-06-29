@@ -33,11 +33,13 @@ nav{
 }
 nav.scrolled{background:rgba(30,22,16,0.96);backdrop-filter:blur(12px);border-bottom-color:rgba(245,239,232,0.08)}
 nav.light{background:rgba(245,239,232,0.96);backdrop-filter:blur(12px);border-bottom-color:rgba(30,22,16,0.08)}
-.wordmark{font-family:'Zilla Slab',serif;font-style:italic;font-size:1.56rem;color:var(--surface);transition:color 0.4s;text-decoration:none;display:flex;align-items:center;gap:0}
-.wordmark .bold{font-weight:700}
-.wordmark .light-wt{font-weight:400}
-.wordmark-logo{width:10px;height:10px;background:var(--rust);border-radius:1px;flex-shrink:0;display:inline-block;margin-right:0.5rem}
-nav.light .wordmark{color:var(--dark)}
+.wordmark{text-decoration:none;display:flex;align-items:center;gap:0.1rem}
+.nav-logo{height:2.5rem;width:auto;flex-shrink:0}
+.nav-wm-wrap{position:relative;display:inline-flex;align-items:center}
+.wm{height:1.56rem;width:auto;display:block;transition:opacity 0.4s}
+.wm-dark{position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0}
+nav.light .wm-light{opacity:0}
+nav.light .wm-dark{opacity:1}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{font-family:'Inter',sans-serif;font-size:1rem;color:rgba(245,239,232,0.65);font-weight:400;transition:color 0.2s;text-decoration:none}
 nav.light .nav-links a{color:rgba(30,22,16,0.55)}
@@ -212,7 +214,6 @@ h2{
 .contact-email:hover{color:rgba(245,239,232,0.5)}
 
 footer{padding:1.75rem 4rem;border-top:1px solid rgba(245,239,232,0.06);background:var(--dark);display:flex;justify-content:space-between;align-items:center}
-footer .wordmark{color:rgba(245,239,232,0.35)}
 footer p{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(245,239,232,0.2);letter-spacing:0.08em}
 
 @media(max-width:768px){
@@ -229,7 +230,13 @@ footer p{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(245,239,23
 <body>
 
 <nav id="nav">
-  <a href="#top" class="wordmark"><span class="wordmark-logo"></span><span class="bold">heart</span><span class="light-wt">work</span></a>
+  <a href="#top" class="wordmark">
+    <img class="nav-logo" src="assets/only-logo-transparent-bg.svg" alt="heartwork">
+    <span class="nav-wm-wrap">
+      <img class="wm wm-light" src="assets/wordmark-dust.png" alt="heartwork">
+      <img class="wm wm-dark" src="assets/wordmark-burnttoast.png" alt="">
+    </span>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">What we do</a></li>
     <li><a href="#team">Who we are</a></li>
@@ -416,7 +423,10 @@ footer p{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(245,239,23
 </section>
 
 <footer>
-  <a href="#top" class="wordmark"><span class="wordmark-logo"></span><span class="bold">heart</span><span class="light-wt">work</span></a>
+  <a href="#top" class="wordmark">
+    <img class="nav-logo" src="assets/only-logo-transparent-bg.svg" alt="heartwork">
+    <img class="wm" src="assets/wordmark-dust.png" alt="heartwork">
+  </a>
   <p>heartwork.in</p>
 </footer>
 
